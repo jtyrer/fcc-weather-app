@@ -1,1 +1,43 @@
 /*CSS*/
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body, html{
+  height:100%;
+  margin:0;
+  font-family: Comfortaa;
+  color: #ffe;
+  font-size:2em;
+}
+.bg{
+  height: 100%;
+  background-image: url('img/cloud.jpg'); /*Photo by Landon Martin on Unsplash*/
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#content-wrapper{
+text-align:center;
+padding-top:10%;
+}
+
+#tempBtn{
+  background-color: #ffe;
+  border:3px solid #696969;
+  border-radius:10px;
+  font:inherit;
+  font-size:0.4em;
+  margin-bottom:60px;
+  cursor:pointer;
+  color:#696969;
+}
+#tempBtn:hover{
+  background-color:#696969;
+  color:#ffe;
+}
+#tempBtn:focus{
+  outline:0;
+}
+#weatherIcon img{
+  width:100px;
+  height:100px;
+}
