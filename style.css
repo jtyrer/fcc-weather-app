@@ -1,43 +1,50 @@
 /*CSS*/
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500");
 
-body, html{
-  height:100%;
-  margin:0;
-  font-family: Comfortaa;
-  color: #ffe;
-  font-size:2em;
+body,
+html {
+  height: 700px;
+  margin: 0;
+  padding: 0;
+  font-family: "Alegreya Sans SC", sans-serif;
 }
-.bg{
+p {
+  margin: 15px;
+}
+.bg {
+  background-image: url("https://drive.google.com/uc?id=1f_r1fU1T3PufoxqT0KZFbu8ivrpMvM9o");
   height: 100%;
-  background-image: url('img/cloud.jpg'); /*Photo by Landon Martin on Unsplash*/
   background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#content-wrapper{
-text-align:center;
-padding-top:10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10%;
 }
 
-#tempBtn{
-  background-color: #ffe;
-  border:3px solid #696969;
-  border-radius:10px;
-  font:inherit;
-  font-size:0.4em;
-  margin-bottom:60px;
-  cursor:pointer;
-  color:#696969;
+#container {
+  background-color: #ffffff99;
+  width: 300px;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
 }
-#tempBtn:hover{
-  background-color:#696969;
-  color:#ffe;
+#location {
+  font-size: 3em;
 }
-#tempBtn:focus{
-  outline:0;
+#temperature {
+  font-size: 2em;
 }
-#weatherIcon img{
-  width:100px;
-  height:100px;
+#tempBtn {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 1em;
+  padding: 10px;
+  background-color: #00000033;
+  border: solid 2px #000;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#tempBtn:focus {
+  outline: none;
+}
+#tempBtn:hover {
+  background-color: #ffffff66;
 }

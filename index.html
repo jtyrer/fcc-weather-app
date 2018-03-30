@@ -5,14 +5,17 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="bg">
-  <div id="content-wrapper">
-    <button id="tempBtn">Switch to Fahrenheit</button><br />
-    <span id="temp">temp</span><br />
-    <span id="location">location</span>
-    <div id="weatherIcon"></div>
+  <div class="bg">
+    <div id="container">
+      <p id="location"><span id="city">city</span>, <span id="country">country</span></p>
+      <p id="temperature"><span id="temp"></span></p>
+      <p id="tempRange">High: <span id="tempMax"></span><br />Low: <span id="tempMin"></span></p>
+      <span id="desc"></span><br />
+      <div id="icon"><img src="" id="weatherIcon"></img>
+      </div><br />
+      <button id="tempBtn">Convert to F</button><br />
+    </div>
   </div>
-</div>
 <script src="script.js"></script>
 </body>
 </html>

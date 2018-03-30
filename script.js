@@ -1,32 +1,59 @@
+//Not been able to get the Fahrenheit/Celsius button working
 
-var myLat;
-var myLon;
-// Get user's location
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var myLat = position.coords.latitude;
-    var myLon = position.coords.longitude;
-    getWeather(myLat, myLon);
-  });
-} else {
-  $('#location').html("Location not available.");
-  };
+// var fahrenheit = false;
 
-function getWeather(myLat, myLon){
-  $.getJSON("https://fcc-weather-api.glitch.me/api/current?lon="+myLon+"&lat="+myLat +'', function(json){
-   $('#temp').html(JSON.stringify(Math.floor(json.main.temp)+"&#8451;").replace(/\"/g, ""));
-   $('#location').html(JSON.stringify(json.name + ', ' + json.sys.country).replace(/\"/g, ""));
-   $('#weatherIcon').html('<img class="icon" src="' + json.weather[0].icon + '">');
-}) //End of JSON
+$(document).ready(function() {
+  //    $('#tempBtn').on('click', function(data){
+  //    if(this.innerHTML === 'Fahrenheit'){
+  //      this.innerHTML = 'Celsius';
+  //      fahrenheit = true;
+  //     update(data);
+  //    } else {
+  //      this.innerHTML = 'Fahrenheit';
+  //      fahrenheit = false;
+  //      update(data);
+  //    }
+  // });
 
-  }; //End of getWeather
+  navigator.geolocation.getCurrentPosition(success, error);
 
+  function success(pos) {
+    var lat = pos.coords.latitude;
+    var lon = pos.coords.longitude;
+    getWeather(lat, lon);
+  }
 
-  $('#tempBtn').on('click', function(){
-    if(this.innerHTML === 'Switch to Fahrenheit'){
-      this.innerHTML = 'Switch to Celsius';
-    } else {
-      this.innerHTML = 'Switch to Fahrenheit';
-      temp = "test";
-    }
-  }); // End of conversion button
+  function error() {
+    alert("error");
+  }
+
+  function getWeather(lat, lon) {
+    var url = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${lon}`;
+    $.getJSON(url, function(data) {
+      update(data);
+    });
+  }
+
+  function update(data) {
+    var city = data.name;
+    var country = data.sys.country;
+    var temp = Math.round(data.main.temp);
+    //  var fahTemp = Math.round(data.main.temp) * 9/5 + 32;
+    var icon = data.weather[0].icon;
+    var tempMax = data.main.temp_max;
+    var tempMin = data.main.temp_min;
+    var desc = data.weather[0].description;
+
+    $("#city").html(city);
+    $("#country").html(country);
+    //    if (fahrenheit = true){
+    //      $('#temp').html(fahTemp);
+    //    } else {
+    $("#temp").html(temp);
+    //    }
+    $("#weatherIcon").attr("src", icon);
+    $("#tempMax").html(tempMax);
+    $("#tempMin").html(tempMin);
+    $("#desc").html(desc);
+  }
+}); // End of doc ready
