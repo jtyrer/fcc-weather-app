@@ -3,7 +3,7 @@ Part of the FreeCodeCamp curriculum under Intermediate Front End Development Pro
 
 https://www.freecodecamp.org/challenges/show-the-local-weather
 
-# Show the Local Weather 
+# Show the Local Weather
 
 Objective: Build a CodePen.io app that is functionally similar to this: http://codepen.io/FreeCodeCamp/full/bELRjV.
 
@@ -16,3 +16,8 @@ User Story: I can see the weather in my current location.
 User Story: I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
 
 User Story: I can push a button to toggle between Fahrenheit and Celsius.
+
+#codepen
+
+For the purpose of submitting to FreeCodeCamp, this code is also hosted on CodePen:
+https://codepen.io/jtyrer/full/QmQMXY/
